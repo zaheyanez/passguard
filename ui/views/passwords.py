@@ -126,6 +126,10 @@ class PasswordsView(QWidget):
             QMessageBox.warning(self, 'Input Error', 'Please enter a label.')
             return
 
+        if label_text in self.passwords:
+            QMessageBox.warning(self, 'Duplicate Label', 'A password with this label already exists.')
+            return
+
         password = generate_secure_password()
         encrypted_password = encrypt_password(password)
         self.passwords[label_text] = encrypted_password
