@@ -8,11 +8,13 @@ APP_REPOSITORY="https://github.com/zaheyanez/pyguard"
 APP_AUTHOR="Zaheyanez"
 APP_LICENSE="MIT"
 APP_REQUIRED_LIBRARIES=[
+    "PyQt5",
     "cryptography",
-    
 ]
-APP_THEME_COLOR="#FF8C00"
+APP_THEME_COLOR="#0078D4"
+APP_FONT="Arial"
 #--
+
 
 # PASSWORD CONFIGURATION
 PASSWORD_MIN_LENGTH=20

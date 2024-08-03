@@ -70,8 +70,8 @@ class StandardButton(BaseButton):
                 color: #ffffff;
                 background-color: {APP_THEME_COLOR};
                 border: 0;
-                font-size: 20px;
-                padding: 15px;
+                font-size: 16px;
+                padding: 11px;
                 border-radius: 5px;
             }}
             QPushButton:hover {{

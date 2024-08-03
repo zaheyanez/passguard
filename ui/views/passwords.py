@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QClipboard, QPixmap
-from pyguard.config import APP_THEME_COLOR, DATA_FILE
+from pyguard.config import APP_THEME_COLOR, APP_FONT, DATA_FILE
 from ui.components.buttons import StandardButton
 from pyguard.encryption import generate_secure_password, encrypt_password, decrypt_password
 
@@ -51,14 +51,15 @@ class PasswordsView(QWidget):
             QWidget {{
                 background-color: #2E2E2E;
                 color: #E0E0E0;
-                font-family: Arial, sans-serif;
+                border-radius:5px;
+                font-family: {APP_FONT}
             }}
             QLineEdit {{
-                background-color: #444;
+                background-color: #2E2E2E;
                 border: 1px solid #666;
                 border-radius: 5px;
                 font-size: 20px;
-                padding: 15px;
+                padding: 7px;
                 color: #E0E0E0;
             }}
             {StandardButton.button_style()}

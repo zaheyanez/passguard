@@ -20,7 +20,9 @@ class MainWindow(QMainWindow):
         self.setGeometry(100, 100, 1200, 800)
 
         central_widget = QWidget()
+        central_widget.setStyleSheet("background-color: #222222;")
         self.setCentralWidget(central_widget)
+        
 
         h_layout = QHBoxLayout(central_widget)
         h_layout.setContentsMargins(0, 0, 0, 0)
