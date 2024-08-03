@@ -9,7 +9,8 @@ from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QClipboard, QPixmap
 from pyguard.config import APP_THEME_COLOR, APP_FONT, DATA_FILE
 from ui.components.buttons import StandardButton
-from pyguard.encryption import generate_secure_password, encrypt_password, decrypt_password
+from pyguard.password import generate_secure_password # Add more complexity to the password creation later
+from pyguard.encryption import encrypt_password, decrypt_password
 
 class ToastNotification(QWidget):
     def __init__(self, message, duration=3000):

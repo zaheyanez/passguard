@@ -31,6 +31,7 @@ DATA_FILE="passwords.json"
 
 # PATHS
 BACKUP_PATH="pyguard/backups/" # Remember put '/' at the end
+KEY_PATH="pyguard/user/keys/" # Remember put '/' at the end
 
 # LOGGING CONFIGURATION
 LOG_LEVEL="DEBUG"
