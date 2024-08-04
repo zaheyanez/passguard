@@ -8,18 +8,30 @@ def load_key():
     """
     Load the secret key from a file or generate a new one if the file does not exist.
 
+    Args:
+        key_path (str): The directory path where the key file is stored.
+        key_file (str): The name of the key file.
+
     Returns:
         bytes: The secret key used for encryption and decryption.
     """
-    FULL_KEY_PATH=f"{KEY_PATH}{KEY_FILE}"
-    print(FULL_KEY_PATH)
-    if os.path.exists(FULL_KEY_PATH):
-        with open(FULL_KEY_PATH, 'rb') as file:
+    # Ensure the directory exists
+    if not os.path.exists(KEY_PATH):
+        os.makedirs(KEY_PATH)
+    
+    # Construct the full path to the key file
+    full_key_path = os.path.join(KEY_PATH, KEY_FILE)
+    print(full_key_path)
+    
+    # Load or generate the key
+    if os.path.exists(full_key_path):
+        with open(full_key_path, 'rb') as file:
             key = file.read()
     else:
         key = Fernet.generate_key()
-        with open(FULL_KEY_PATH, 'wb') as file:
+        with open(full_key_path, 'wb') as file:
             file.write(key)
+    
     return key
 
 def encrypt_password(password):
