@@ -2,7 +2,7 @@ import random
 import string
 from cryptography.fernet import Fernet
 import os
-from pyguard.config import KEY_PATH, KEY_FILE, PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH
+from pyguard.config import KEY_PATH, KEY_FILE
 
 def load_key():
     """
@@ -11,13 +11,14 @@ def load_key():
     Returns:
         bytes: The secret key used for encryption and decryption.
     """
-    KEY=f"{KEY_PATH} {KEY_FILE}"
-    if os.path.exists(KEY):
-        with open(KEY, 'rb') as file:
+    FULL_KEY_PATH=f"{KEY_PATH}{KEY_FILE}"
+    print(FULL_KEY_PATH)
+    if os.path.exists(FULL_KEY_PATH):
+        with open(FULL_KEY_PATH, 'rb') as file:
             key = file.read()
     else:
         key = Fernet.generate_key()
-        with open(KEY, 'wb') as file:
+        with open(FULL_KEY_PATH, 'wb') as file:
             file.write(key)
     return key
 
