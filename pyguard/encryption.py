@@ -50,3 +50,5 @@ def decrypt_password(encrypted_password):
     f = Fernet(key)
     decrypted_password = f.decrypt(encrypted_password.encode()).decode()
     return decrypted_password
+
+
