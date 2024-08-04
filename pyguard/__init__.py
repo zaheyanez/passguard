@@ -119,18 +119,27 @@ def create_backup():
     """
     Create a backup of the current data file.
     
+    Args:
+        data_file (str): The path to the data file to back up.
+        backup_path (str): The directory path where backup files are stored.
+    
     Returns: 
         str: The path to the backup file.
     """
-    backup_filename=None
+    # Ensure the backup directory exists
+    if not os.path.exists(BACKUP_PATH):
+        os.makedirs(BACKUP_PATH)
+    
+    # Construct the backup file path
+    backup_filename = None
     try:
-        backup_filename = f"{BACKUP_PATH}backup_{datetime.now().strftime('%Y%m%d%H%M%S')}.json"
+        backup_filename = os.path.join(BACKUP_PATH, f"backup_{datetime.now().strftime('%Y%m%d%H%M%S')}.json")
         shutil.copy(DATA_FILE, backup_filename)
         logger.info(f"Backup created at: {backup_filename}.")
     except Exception as e:
         logger.warning(f"Couldn't create backup: {e}.")
     cleanup_old_backups()   
-    return backup_filename    
+    return backup_filename 
 
 def restore_latest_backup():
     """
