@@ -6,7 +6,6 @@ from pyguard.config import APP_NAME, APP_VERSION, AUTO_RESTORE
 # Checks
 checks=check_all()
 
-
 if checks==True:
     logger.info(f"{APP_NAME} {APP_VERSION}")
     if AUTO_RESTORE and is_data_file_corrupted():

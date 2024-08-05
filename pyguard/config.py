@@ -13,6 +13,7 @@ APP_REQUIRED_LIBRARIES=[
 ]
 APP_THEME_COLOR="#0078D4"
 APP_FONT="Arial"
+APP_AUTO_UPDATE=True # Update version
 #--
 
 
