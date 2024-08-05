@@ -1,5 +1,3 @@
-import random
-import string
 from cryptography.fernet import Fernet
 import os
 from pyguard.config import KEY_PATH, KEY_FILE

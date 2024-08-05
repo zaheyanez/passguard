@@ -3,14 +3,16 @@ from ui.components.buttons import StandardButton
 from PyQt5.QtCore import Qt
 from packaging import version
 from pyguard.version import get_last_version, get_version
-from pyguard.config import APP_AUTO_UPDATE
 from pyguard.log import logger
+from pyguard.settings import load_config
 
 class PrincipalView(QWidget):
     def __init__(self):
         super().__init__()
+        self.config = load_config()
         self.initUI()
-        if APP_AUTO_UPDATE:
+        if self.config['APP_AUTO_UPDATE']:
+            print("Starting update searching...")
             self.check_for_update()
 
     def initUI(self):
