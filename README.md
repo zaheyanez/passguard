@@ -1,5 +1,7 @@
 # PyGuard 🛡️
-Password manager built in Python 
+Password manager built in Python
+
+![Example](resources/example.png)
 
 ## Quickstart 🛠️
 If you want to contribute to the development of PyGuard, follow these steps:

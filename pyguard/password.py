@@ -1,4 +1,4 @@
-import random
+import secrets
 import string
 from pyguard.config import PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH
 
@@ -10,25 +10,24 @@ def generate_secure_password():
     Returns:
         str: The generated secure password.
     """
-    length = random.randint(PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH)
-    
-    if length < 6:
-        raise ValueError("Password length should be at least 6 characters")
+    if PASSWORD_MIN_LENGTH < 6:
+        raise ValueError("PASSWORD_MIN_LENGTH should be at least 6 characters")
+
+    if PASSWORD_MAX_LENGTH < PASSWORD_MIN_LENGTH:
+        raise ValueError("PASSWORD_MAX_LENGTH should be greater than or equal to PASSWORD_MIN_LENGTH")
+
+    length = secrets.choice(range(PASSWORD_MIN_LENGTH, PASSWORD_MAX_LENGTH + 1))
 
     all_characters = string.ascii_letters + string.digits + string.punctuation
+    categories = [string.ascii_uppercase, string.ascii_lowercase, string.digits, string.punctuation]
 
     # Ensure at least one character from each category
-    password = [
-        random.choice(string.ascii_uppercase),
-        random.choice(string.ascii_lowercase),
-        random.choice(string.digits),
-        random.choice(string.punctuation)
-    ]
+    password = [secrets.choice(category) for category in categories]
 
     # Fill the rest of the password length with random characters
-    password += random.choices(all_characters, k=length - len(password))
+    password += [secrets.choice(all_characters) for _ in range(length - len(password))]
 
     # Shuffle the result to ensure randomness
-    random.shuffle(password)
+    secrets.SystemRandom().shuffle(password)
     
     return ''.join(password)

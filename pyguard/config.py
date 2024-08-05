@@ -1,7 +1,7 @@
 from pyguard.version import get_version
 
 # APP CONFIGURATION
-APP_NAME="PyGuard"
+APP_NAME="PyGuard" # New name!
 APP_VERSION=get_version()
 APP_ICON="resources/icons/pyguard/icon.png"
 APP_REPOSITORY="https://github.com/zaheyanez/pyguard"
