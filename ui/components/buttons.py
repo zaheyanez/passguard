@@ -63,6 +63,22 @@ class StandardButton(BaseButton):
             }}
         """
 
+    @staticmethod  
+    def primary_button_style():
+        return f"""
+            QPushButton {{
+                background-color: {APP_THEME_COLOR};
+                border: 1px solid {APP_THEME_COLOR};
+                border-radius: 5px;
+                color: #FFFFFF;
+                font-size: 14px;
+                padding: 7px 14px;
+            }}
+            QPushButton:hover {{
+                background-color: {adjust_color_brightness(APP_THEME_COLOR, -20)};
+            }}
+        """
+
     @staticmethod
     def generate_button_style():
         return f"""

@@ -6,8 +6,15 @@ from pyguard.config import APP_NAME, APP_VERSION, APP_ICON
 from ui.views.home import PrincipalView
 from ui.views.passwords import PasswordsView
 from ui.views.settings import SettingsView
+from ui.views.credits import CreditsView
 
 from ui.components.buttons import SidebarButton
+
+HOME_BUTTON_NAME="Home 🛡️"
+PASSWORD_BUTTON_NAME="Passwords 🔒"
+SETTINGS_BUTTON_NAME="Settings ⚙️"
+CREDITS_BUTTON_NAME="Credits ✨"
+QUIT_BUTTON_NAME="Quit 👋"
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -35,18 +42,18 @@ class MainWindow(QMainWindow):
         self.sidebar_layout.setContentsMargins(0, 0, 0, 0)
 
         self.buttons = {}
-        button_names = ['Home', 'Passwords', 'Settings']
+        button_names = [HOME_BUTTON_NAME, PASSWORD_BUTTON_NAME, SETTINGS_BUTTON_NAME, CREDITS_BUTTON_NAME]
         for name in button_names:
             button = SidebarButton(name)
             button.clicked.connect(lambda _, text=name: self.change_content(text))
             self.sidebar_layout.addWidget(button)
             self.buttons[name] = button
 
-        close_button = SidebarButton('Close')
+        close_button = SidebarButton(QUIT_BUTTON_NAME)
         close_button.clicked.connect(self.close)
         self.sidebar_layout.addStretch()
         self.sidebar_layout.addWidget(close_button)
-        self.buttons['Close'] = close_button
+        self.buttons[QUIT_BUTTON_NAME] = close_button
 
         h_layout.addWidget(self.sidebar)
 
@@ -61,16 +68,21 @@ class MainWindow(QMainWindow):
 
         self.settings_view = SettingsView()
         self.stacked_widget.addWidget(self.settings_view)
+        
+        self.credits_view = CreditsView()
+        self.stacked_widget.addWidget(self.credits_view)
 
-        self.change_content('Home')
+        self.change_content(HOME_BUTTON_NAME)
 
     def change_content(self, view_name):
-        if view_name == 'Home':
+        if view_name == HOME_BUTTON_NAME:
             self.stacked_widget.setCurrentWidget(self.principal_view)
-        elif view_name == 'Passwords':
+        elif view_name == PASSWORD_BUTTON_NAME:
             self.stacked_widget.setCurrentWidget(self.password_view)
-        elif view_name == 'Settings':
+        elif view_name == SETTINGS_BUTTON_NAME:
             self.stacked_widget.setCurrentWidget(self.settings_view)
+        elif view_name == CREDITS_BUTTON_NAME:
+            self.stacked_widget.setCurrentWidget(self.credits_view)
 
         for name, button in self.buttons.items():
             button.set_active(name == view_name)
