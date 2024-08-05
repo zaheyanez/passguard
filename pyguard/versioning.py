@@ -1,4 +1,4 @@
-MAJOR=0
-MINOR=2
+MAJOR=1
+MINOR=0
 PATCH=0
-TYPE="alpha" # production | alpha | beta...
+TYPE="production" # production | alpha | beta...
