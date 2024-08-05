@@ -57,10 +57,10 @@ class PasswordsView(QWidget):
             }}
             QLineEdit {{
                 background-color: #2E2E2E;
-                border: 1px solid #666;
+                
                 border-radius: 5px;
-                font-size: 20px;
-                padding: 7px;
+                font-size: 16px;
+                padding: 6px 10px;
                 color: #E0E0E0;
             }}
             {StandardButton.button_style()}
@@ -86,7 +86,7 @@ class PasswordsView(QWidget):
         input_layout.addWidget(self.label_input)
 
         self.generate_button = QPushButton('Generate Password', self)
-        self.generate_button.setStyleSheet(StandardButton.generate_button_style())
+        self.generate_button.setStyleSheet(StandardButton.primary_button_style())
         self.generate_button.clicked.connect(self.generate_password)
         input_layout.addWidget(self.generate_button)
 
