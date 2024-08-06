@@ -33,4 +33,4 @@ If you want to contribute to the development of PassGuard, follow these steps:
 
 6. **Run the project...**
     ```bash
-    python pyguard.py
+    python passguard.py

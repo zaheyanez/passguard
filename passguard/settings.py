@@ -1,6 +1,7 @@
 import json
 import os
 
+# Need to fix this
 CONFIG_FILE="settings.json"
 CONFIG_PATH="passguard/user/settings/"
 CONFIG__=f"{CONFIG_PATH}{CONFIG_FILE}"
