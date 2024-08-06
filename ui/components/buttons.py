@@ -1,5 +1,5 @@
 from PyQt5.QtWidgets import QPushButton
-from pyguard.config import APP_THEME_COLOR
+from passguard.config import APP_THEME_COLOR
 
 def adjust_color_brightness(color, factor):
     """Adjusts the brightness of the given color."""

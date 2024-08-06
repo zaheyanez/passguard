@@ -1,7 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget
 from PyQt5.QtGui import QIcon
-from pyguard.config import APP_NAME, APP_VERSION, APP_ICON
+from passguard.config import APP_NAME, APP_VERSION, APP_ICON
 
 from ui.views.home import PrincipalView
 from ui.views.passwords import PasswordsView

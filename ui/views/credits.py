@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QScrollArea, QPushButton, QHBoxLayout
 from PyQt5.QtCore import Qt
-from pyguard.config import APP_NAME, APP_AUTHOR, APP_REPOSITORY, APP_VERSION, APP_LICENSE
+from passguard.config import APP_NAME, APP_AUTHOR, APP_REPOSITORY, APP_VERSION, APP_LICENSE
 from ui.components.buttons import StandardButton
 import webbrowser
 
