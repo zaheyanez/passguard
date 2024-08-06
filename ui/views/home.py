@@ -65,7 +65,7 @@ class PrincipalView(QWidget):
         """)
         instruction_layout = QVBoxLayout(instruction_frame)
 
-        instruction_label = QLabel(f"How to use {APP_NAME}", self)
+        instruction_label = QLabel(f"How to use {APP_NAME} 🔎", self)
         instruction_label.setStyleSheet("color: white; font-size: 24px;")
         instruction_label.setAlignment(Qt.AlignCenter)
         instruction_layout.addWidget(instruction_label)

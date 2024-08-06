@@ -96,9 +96,7 @@ def start_gui():
 
 def close_gui():
     """
-    Properly close the GUI application by terminating any background threads
-    or processes and then exiting the application.
+    Properly close the GUI.
     """
     import os
-    # Exit the application.
     os._exit(1)

@@ -63,9 +63,9 @@ class CreditsView(QWidget):
         repo_button.clicked.connect(self.open_repository)
         button_layout.addWidget(repo_button)
         
-        other_button = QPushButton("Placeholder button")
+        other_button = QPushButton("Author")
         other_button.setStyleSheet(StandardButton.button_style())
-        other_button.clicked.connect(self.open_repository)
+        other_button.clicked.connect(self.open_author)
         button_layout.addWidget(other_button)
 
         layout.addLayout(button_layout)
@@ -82,3 +82,6 @@ class CreditsView(QWidget):
         
     def open_repository(self):
         webbrowser.open(APP_REPOSITORY)
+    
+    def open_author(self):
+        webbrowser.open(f'https://github.com/{APP_AUTHOR}')

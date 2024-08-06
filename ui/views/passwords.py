@@ -177,10 +177,10 @@ class PasswordsView(QWidget):
         h_layout = QHBoxLayout(container)
 
         # Icon (Placeholder)
-        icon_label = QLabel(self)
-        icon_label.setFixedSize(24, 24)
-        icon_label.setPixmap(QPixmap("path/to/icon.png").scaled(24, 24, Qt.KeepAspectRatio))
-        h_layout.addWidget(icon_label, alignment=Qt.AlignLeft)
+        # icon_label = QLabel(self)
+        # icon_label.setFixedSize(24, 24)
+        # icon_label.setPixmap(QPixmap("path/to/icon.png").scaled(24, 24, Qt.KeepAspectRatio))
+        # h_layout.addWidget(icon_label, alignment=Qt.AlignLeft)
 
         label_display = QLabel(f'{label}: {self.censored_password(password)}', self)
         label_display.setObjectName("label_display")

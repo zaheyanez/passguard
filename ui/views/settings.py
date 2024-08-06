@@ -17,9 +17,16 @@ class SettingsView(QWidget):
         self.auto_update_checkbox = QCheckBox('Enable Auto Update', self)
         self.auto_update_checkbox.setChecked(self.config.get('APP_AUTO_UPDATE', True))
         self.auto_update_checkbox.setStyleSheet(f"""
+            QWidget {{
+                background-color: #2E2E2E;
+                color: #E0E0E0;
+                border-radius:5px;
+                padding: 10px 0;
+            }}
             QCheckBox {{
                 color: white;
                 font-size:16px;
+                padding: 14px;
             }}
             QCheckBox::indicator {{
                 width: 20px;
