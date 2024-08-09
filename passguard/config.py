@@ -5,21 +5,18 @@ APP_NAME="PassGuard" # New name!
 APP_VERSION=get_version()
 APP_ICON="resources/icons/passguard/icon.png"
 APP_REPOSITORY="https://github.com/zaheyanez/passguard"
-APP_AUTHOR="Zaheyanez"
+APP_AUTHOR="zaheyanez"
 APP_LICENSE="MIT"
 APP_REQUIRED_LIBRARIES=[
     "PyQt5",
     "cryptography",
 ]
 APP_THEME_COLOR="#0078D4"
-APP_FONT="Arial"
-APP_AUTO_UPDATE=True # Update version
-#--
-
+APP_FONT="Arial" # Unnecesary... remove later, not now :)
 
 # PASSWORD CONFIGURATION
 PASSWORD_MIN_LENGTH=20
-PASSWORD_MAX_LENGTH=25
+PASSWORD_MAX_LENGTH=30
 
 # PYTHON CONFIGURATION
 PYTHON_MIN_VERSION=(3,9)

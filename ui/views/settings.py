@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QCheckBox, QPushButton, QMessageBox, QHBoxLayout
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QCheckBox, QMessageBox, QHBoxLayout
 from PyQt5.QtCore import Qt
 from passguard.config import APP_THEME_COLOR
 from passguard.settings import save_config, load_config
-from ui.components.buttons import StandardButton  # Asegúrate de importar StandardButton desde buttons.py
+from ui.components.buttons import StandardButton
 
 class SettingsView(QWidget):
     def __init__(self):

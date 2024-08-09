@@ -6,10 +6,9 @@ from PyQt5.QtWidgets import (
     QLineEdit, QApplication, QMessageBox, QScrollArea, QFrame
 )
 from PyQt5.QtCore import Qt, QTimer
-from PyQt5.QtGui import QClipboard, QPixmap
 from passguard.config import APP_THEME_COLOR, APP_FONT, DATA_FILE
 from ui.components.buttons import StandardButton
-from passguard.password import generate_secure_password # Add more complexity to the password creation later
+from passguard.password import generate_secure_password
 from passguard.encryption import encrypt_password, decrypt_password
 
 class ToastNotification(QWidget):
@@ -175,12 +174,6 @@ class PasswordsView(QWidget):
     def display_password(self, label, password):
         container = QFrame()
         h_layout = QHBoxLayout(container)
-
-        # Icon (Placeholder)
-        # icon_label = QLabel(self)
-        # icon_label.setFixedSize(24, 24)
-        # icon_label.setPixmap(QPixmap("path/to/icon.png").scaled(24, 24, Qt.KeepAspectRatio))
-        # h_layout.addWidget(icon_label, alignment=Qt.AlignLeft)
 
         label_display = QLabel(f'{label}: {self.censored_password(password)}', self)
         label_display.setObjectName("label_display")
