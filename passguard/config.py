@@ -26,10 +26,12 @@ PYTHON_MAX_VERSION=(3,11)
 LOG_FILE="app.log"
 KEY_FILE="secret.key"
 DATA_FILE="passwords.json"
+CONFIG_FILE="settings.json"
 
 # PATHS
 BACKUP_PATH="passguard/backups/" # Remember put '/' at the end
 KEY_PATH="passguard/user/keys/" # Remember put '/' at the end
+CONFIG_PATH="passguard/user/settings/" # Remember put '/' at the end
 
 # LOGGING CONFIGURATION
 LOG_LEVEL="DEBUG"

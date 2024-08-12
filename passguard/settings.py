@@ -1,19 +1,16 @@
 import json
 import os
+from passguard.config import CONFIG_FILE, CONFIG_PATH
 
-# Need to fix this
-CONFIG_FILE="settings.json"
-CONFIG_PATH="passguard/user/settings/"
-CONFIG__=f"{CONFIG_PATH}{CONFIG_FILE}"
-
+SETTINGS=f"{CONFIG_PATH}{CONFIG_FILE}"
 
 def load_config():
-    if not os.path.exists(CONFIG__):
-        os.makedirs(os.path.dirname(CONFIG__), exist_ok=True)
-        with open(CONFIG__, 'w') as file:
+    if not os.path.exists(SETTINGS):
+        os.makedirs(os.path.dirname(SETTINGS), exist_ok=True)
+        with open(SETTINGS, 'w') as file:
             json.dump({"APP_AUTO_UPDATE": True}, file)
 
-    with open(CONFIG__, 'r') as file:
+    with open(SETTINGS, 'r') as file:
         config = json.load(file)
         
     # Convert JSON booleans to Python booleans
@@ -21,5 +18,5 @@ def load_config():
     return config
 
 def save_config(config):
-    with open(CONFIG__, 'w') as file:
+    with open(SETTINGS, 'w') as file:
         json.dump(config, file, indent=4)
