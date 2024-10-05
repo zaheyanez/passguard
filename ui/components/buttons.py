@@ -51,15 +51,13 @@ class StandardButton(BaseButton):
         return f"""
             QPushButton {{
                 background-color: #555;
-                border: 1px solid #777;
-                border-radius: 5px;
                 color: #E0E0E0;
                 font-size: 14px;
                 padding: 7px 14px;
+                border-radius: 0;
             }}
             QPushButton:hover {{
                 background-color: #666;
-                border: 1px solid #888;
             }}
         """
 
@@ -68,11 +66,10 @@ class StandardButton(BaseButton):
         return f"""
             QPushButton {{
                 background-color: {APP_THEME_COLOR};
-                border: 1px solid {APP_THEME_COLOR};
-                border-radius: 5px;
                 color: #FFFFFF;
                 font-size: 14px;
                 padding: 7px 14px;
+                border-radius: 0;
             }}
             QPushButton:hover {{
                 background-color: {adjust_color_brightness(APP_THEME_COLOR, -20)};

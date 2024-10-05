@@ -12,7 +12,7 @@ APP_REQUIRED_LIBRARIES=[
     "cryptography",
 ]
 APP_THEME_COLOR="#0078D4"
-APP_FONT="Arial" # Unnecesary... remove later, not now :)
+APP_FONT="Arial" 
 
 # PASSWORD CONFIGURATION
 PASSWORD_MIN_LENGTH=20
@@ -29,18 +29,18 @@ DATA_FILE="passwords.json"
 CONFIG_FILE="settings.json"
 
 # PATHS
-BACKUP_PATH="passguard/backups/" # Remember put '/' at the end
-KEY_PATH="passguard/user/keys/" # Remember put '/' at the end
-CONFIG_PATH="passguard/user/settings/" # Remember put '/' at the end
+BACKUP_PATH="passguard/backups/"
+KEY_PATH="passguard/user/keys/"
+CONFIG_PATH="passguard/user/settings/"
 
 # LOGGING CONFIGURATION
 LOG_LEVEL="DEBUG"
 LOG_FORMAT="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 
 # BACKUP CONFIGURATION
-BACKUP_INTERVAL = 3600  # Interval in seconds for automatic backups (1 hour)
+BACKUP_INTERVAL = 3600
 AUTO_RESTORE = True  # If True, passguard will automatically restore the most recent backup if 'passwords.json' is missing or corrupted at startup
-MAX_BACKUPS = 10  # Maximum number of backup files to keep
+MAX_BACKUPS = 10
 
 # OS CONFIGURATION
 OS_SUPPORTED=[

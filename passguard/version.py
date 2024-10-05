@@ -1,4 +1,4 @@
-from passguard.versioning import MAJOR, MINOR, PATCH, TYPE
+from passguard.versioning import MAJOR, MINOR, PATCH
 import requests
 
 
@@ -7,8 +7,6 @@ def get_version():
     Return app current version.
     """
     version=f"v{MAJOR}.{MINOR}.{PATCH}"
-    if TYPE != "production":
-        version += f"-{TYPE}"
     return version
 
 def get_last_version():
