@@ -1,3 +1,4 @@
 {
-    "APP_AUTO_UPDATE": true
+    "APP_AUTO_UPDATE": true,
+    "APP_BACKUP": true
 }

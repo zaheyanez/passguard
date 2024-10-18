@@ -13,14 +13,11 @@ def load_key():
     Returns:
         bytes: The secret key used for encryption and decryption.
     """
-    # Ensure the directory exists
     if not os.path.exists(KEY_PATH):
         os.makedirs(KEY_PATH)
     
-    # Construct the full path to the key file
     full_key_path = os.path.join(KEY_PATH, KEY_FILE)
     
-    # Load or generate the key
     if os.path.exists(full_key_path):
         with open(full_key_path, 'rb') as file:
             key = file.read()
