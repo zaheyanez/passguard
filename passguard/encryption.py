@@ -19,7 +19,6 @@ def load_key():
     
     # Construct the full path to the key file
     full_key_path = os.path.join(KEY_PATH, KEY_FILE)
-    print(full_key_path)
     
     # Load or generate the key
     if os.path.exists(full_key_path):
